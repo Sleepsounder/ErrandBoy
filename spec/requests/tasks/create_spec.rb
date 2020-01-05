@@ -24,17 +24,11 @@ describe 'POST /tasks', type: :request do
     end
   end
 
-  #   context "with valid params" do
-  #     let(:created_rating) { Rating.find_by(order_id: order.id) }
-  #     let(:params) do
-  #       {
-  #         "rater_id": rater.id,
-  #         "rated_id": rated.id,
-  #         "order_id": order.id,
-  #         "score": 5,
-  #         "review": "Great service!!"
-  #       }
-  #     end
+  context "with valid params" do
+      it 'returns a 200' do
+        expect(subject).to eq(200)
+    end
+  end
 
   #     it "creates a rating with the correct params" do
   #       expect { subject }.to change(Rating, :count).by(1)
