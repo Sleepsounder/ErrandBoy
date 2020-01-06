@@ -30,6 +30,14 @@ describe 'POST /tasks', type: :request do
     end
   end
 
+  # context "if Task saves to database" do
+  #   it "persists" do
+  #     expect { 
+  #       post :params
+  #     }.to change { Task.count }
+  #   end
+  # end
+
   #     it "creates a rating with the correct params" do
   #       expect { subject }.to change(Rating, :count).by(1)
   #       expect(created_rating.rater_id).to eq(params[:rater_id])

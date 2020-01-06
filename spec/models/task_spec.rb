@@ -11,4 +11,12 @@ RSpec.describe Task, type: :model do
     subject.title = nil
     expect(subject).to_not be_valid
   end
+
+  context "save Task to database" do
+    it "persists" do
+      expect { 
+        subject.save
+      }.to change { Task.count }
+    end
+  end
 end
