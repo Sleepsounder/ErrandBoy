@@ -24,27 +24,13 @@ describe 'POST /tasks', type: :request do
     end
   end
 
-  context "with valid params" do
-      it 'returns a 200' do
-        expect(subject).to eq(200)
+  context 'with valid params' do
+    it 'returns a 200' do
+      expect(subject).to eq(200)
+    end
+
+    it 'creates a new Task' do
+      expect { subject }.to change(Task, :count).by(+1)
     end
   end
-
-  # context "if Task saves to database" do
-  #   it "persists" do
-  #     expect { 
-  #       post :params
-  #     }.to change { Task.count }
-  #   end
-  # end
-
-  #     it "creates a rating with the correct params" do
-  #       expect { subject }.to change(Rating, :count).by(1)
-  #       expect(created_rating.rater_id).to eq(params[:rater_id])
-  #       expect(created_rating.rated_id).to eq(params[:rated_id])
-  #       expect(created_rating.order_id).to eq(params[:order_id])
-  #       expect(created_rating.score).to eq(params[:score])
-  #       expect(created_rating.review).to eq(params[:review])
-  #     end
-  #   end
 end
