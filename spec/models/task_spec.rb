@@ -14,11 +14,13 @@ RSpec.describe Task, type: :model do
     expect(subject).to_not be_valid
   end
 
-  context 'save Task to database' do
+  context 'Task has valid attributes' do
     it 'persists' do
-      expect do
-        subject.save
-      end.to change { Task.count }
+      expect { subject.save.to change { Task.count }.by(1) }
+    end
+
+    it 'deletes' do
+      expect { subject.destroy.to change { Task.count }.by(1) }
     end
   end
 end
