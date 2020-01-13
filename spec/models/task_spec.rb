@@ -14,13 +14,12 @@ RSpec.describe Task, type: :model do
     expect(subject).to_not be_valid
   end
 
-  context 'Task has valid attributes' do
+  context 'Task has CRUD functionality' do
     it 'persists' do
-      expect { subject.save.to change { Task.count }.by(1) }
+      expect { subject.save }.to change(Task, :count).by(+1)
     end
-
-    it 'deletes' do
-      expect { subject.destroy.to change { Task.count }.by(1) }
-    end
+    it "is found"
+    it "is updated"
+    it "is deleted" 
   end
 end
